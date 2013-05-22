@@ -1,0 +1,9 @@
+#!/bin/bash
+
+KHAN_PATH=/home/ubuntu/KhanLatest
+
+cd $KHAN_PATH
+source activate > /dev/null
+
+python tools/runtests.py -f $1
+

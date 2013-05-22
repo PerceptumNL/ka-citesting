@@ -1,0 +1,40 @@
+<html>
+<head>
+<style>
+body {
+    font-family: helvetica;
+}
+table {
+    width: 100%;
+    font-size: 14px;
+}
+thead {
+    background: #ccc;
+}
+</style>
+</head>
+<body>
+<h1>CI Testing - Master branch of <a href="https://github.com/PerceptumNL/khanlatest">KhanLatest</a></h1>
+<table>
+<thead>
+<td>Date</td>
+<td>Commit</td>
+<td>Results</td>
+<td>Author</td>
+<td>Message</td>
+</thead>
+<tbody>
+{% for r in test_reports_dict %}
+<tr>
+<td>{{ r.authored_date }}</td>
+<td><a href="/report/{{ r.commit }}.html">{{ r.commit }}</a></td>
+<td>{{ r.results }}</td>
+<td>{{ r.author_name }}</td>
+<td>{{ r.message }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+</body>
+</html>
